@@ -5,8 +5,8 @@ from shapely.geometry import Point, Polygon
 
 # Объявляем переменные для вычисления зоны доставки и
 # количества ресторанов доступных клиенту
-rest_deliv_coord=[]
-rest_counter=0
+rest_deliv_coord = []
+rest_counter = 0
 
 # Создаем файл для записи результатов и вводим в него
 # поля-идентификаторы
@@ -20,7 +20,7 @@ with open('places_available.csv', 'w', newline='') as place_avail:
         # Запускаем цикл по клиентам и их координатам
         for user_line in user_coord:
             # Назначаем точке координаты клиента
-            client=Point(float(user_line[1]), float(user_line[2]))
+            client = Point(float(user_line[1]), float(user_line[2]))
             # Открываем файл с координатами ресторанов
             with open('place_zone_coordinates.csv') as place_coord:
                 place_coord = csv.reader(place_coord, delimiter=',')
